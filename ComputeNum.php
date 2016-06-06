@@ -12,9 +12,6 @@ include 'Exceptions/DataNotArrayException.php';
 class ComputeNum
 {
     private $nums;
-    private $average;
-    private $sum;
-    private $count;
     
     
     public function __construct($array){
@@ -23,9 +20,6 @@ class ComputeNum
         } else {
             sort($array);
             $this->nums = $array;
-            $this->sum = $this->getSum();
-            $this->average = $this->getAverage();
-            $this->count = count($array);
         }
     } 
     public function getSum(){
@@ -45,8 +39,19 @@ class ComputeNum
         return $result;
         
     }
+    public function getMedian(){
+        $array = $this->nums;
+        $result = 0;
+        $len = count($array);
+        if(($len % 2) == 0){
+            $result = (($array[($len / 2 - 1)]) + ($array[$len / 2])) / 2;
+       
+        }else{
+            $result = $array[($len - 1) / 2];
+        }
     
-    
+        return $result;
+    }
 }
 
 ?>
