@@ -13,6 +13,9 @@ class ComputeNum
 {
     private $nums;
     
+    // Result
+    public $results_array;
+    
     
     public function __construct($array){
         if(!(is_array($array))){
@@ -20,6 +23,14 @@ class ComputeNum
         } else {
             sort($array);
             $this->nums = $array;
+          # $result = 0;
+            $result = array(
+            "average" => ($this->getAverage()),
+            "sum"     => ($this->getSum()),            
+            "median"  => ($this->getMedian()),
+            "variance"=> ($this->getVariance())
+            );
+            $this->results_array = $result;
         }
     } 
     public function getSum(){
