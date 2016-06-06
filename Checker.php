@@ -5,10 +5,13 @@
  */
 include_once 'ComputeNum.php'; 
 $array = array(1,2,3,4,5);
- # $array = 1;
- # $num = new ComputeNum($array);
+$num = new ComputeNum($array);
  # echo $num->getAverage();
  # echo $num->getMedian();
  # Time : 2016/6/6 
  # Success.
- 
+ # echo $num->getVariance();
+ # Failed: Result->3.
+ # Time : 2016/6/6.
+ # Success: Result->2.
+ # Time : 2016/6/6 14:57
